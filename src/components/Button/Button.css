@@ -1,0 +1,7 @@
+.button-wrapper {
+  border-radius: 16px;
+  color: #000000;
+  font-size: 20px;
+  border: transparent;
+  cursor: pointer;
+}

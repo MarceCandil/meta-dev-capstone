@@ -1,15 +1,23 @@
-import React from 'react';
+import React from "react";
 
-type MainProps = {
-  children: React.ReactNode
-}
+import Landing from './Landing/Landing';
+import Specials from './Specials/Specials';
+import Testimonials from './Testimonials/Testimonials';
+import About from './About/About';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
-function Main({children}: MainProps) {
+function Main() {
+  const size = useWindowSize();
+  const isVisible = !(size.width! < 900);
+
   return (
-      <main>
-        {children}
-      </main>
-  );
+    <main>
+      <Landing isVisible={isVisible}/>
+      <Specials />
+      <Testimonials isVisible={isVisible} />
+      <About isVisible={isVisible}/>
+    </main>
+  )
 }
 
 export default Main;

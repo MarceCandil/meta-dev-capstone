@@ -1,0 +1,20 @@
+.testimonial-box {
+  width: 152px;
+  padding: 29px 24px;
+  background-color: #ffffff;
+}
+
+.testimonial-box-person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.testimonial-box-title {
+  margin-bottom: 13px;
+  display: block;
+}
+
+.testimonial-box-person > img {
+  margin-right: 12px;
+}

@@ -1,0 +1,34 @@
+.specials-header {
+  display: flex;
+  margin-bottom: 56px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specials-header h2 {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.list-cards {
+  display: flex;
+  height: 440px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 900px) {
+  .specials-header {
+    padding: 0 25px;
+  }
+
+  .cards-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .list-cards {
+    width: 264px;
+    overflow-x: scroll;
+  }
+}

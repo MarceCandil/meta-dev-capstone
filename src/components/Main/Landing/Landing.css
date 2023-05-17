@@ -1,0 +1,41 @@
+.landing-content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 23px;
+}
+
+.landing-content div {
+  width: 423px;
+  margin-top: 30px;
+}
+
+.landing-content h1 {
+  font-size: 64px;
+  color: #f4ce14;
+  font-weight: 400;
+}
+
+.landing-content h2 {
+  font-size: 40px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0px 0px 26px;
+}
+
+.landing-content p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 50px;
+}
+
+.landing-content img {
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 900px) {
+  .landing-content {
+    display: flex;
+    justify-content: center;
+  }
+}

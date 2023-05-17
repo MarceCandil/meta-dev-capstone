@@ -1,0 +1,26 @@
+.testimonials-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.testimonials-wrapper > h1 {
+  font-family: 'Markazi Text';
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 43px;
+}
+
+.testimonials-box-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 900px) {
+  .testimonials-wrapper {
+    display: none;
+  }
+}
