@@ -5,6 +5,7 @@ import Specials from './Specials/Specials';
 import Testimonials from './Testimonials/Testimonials';
 import About from './About/About';
 import { useWindowSize } from '../../hooks/useWindowSize';
+import { Outlet } from 'react-router-dom';
 
 function Main() {
   const size = useWindowSize();
@@ -16,6 +17,7 @@ function Main() {
       <Specials />
       <Testimonials isVisible={isVisible} />
       <About isVisible={isVisible}/>
+      <Outlet />
     </main>
   )
 }

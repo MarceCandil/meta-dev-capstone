@@ -4,12 +4,12 @@ nav > ul {
 }
 
 nav > ul > li {
-  margin-right: 28px;
+  margin-right: 1.75rem;
 }
 
 nav > ul > li > a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #000000;
 }
 

@@ -21,7 +21,7 @@ function About({ isVisible }: AboutProps) {
           </div>
           <section className="images-container">
               <img height={338} width={276} src={RestaurantA} alt="Little Lemon restaurant cuisine 1" />
-              <img height={338} width={276} className="about-2" src={RestaurantB} alt="Little Lemon restaurant cuisine 2" />
+              <img height={338} width={276} className="img_2" src={RestaurantB} alt="Little Lemon restaurant cuisine 2" />
           </section>
         </article>
     </Wrapper>

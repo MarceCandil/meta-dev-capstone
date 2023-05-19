@@ -1,5 +1,5 @@
 .card-container {
-  width: 264px;
+  width: 16.5rem;
   display: flex;
   flex-direction: column;
   background-color: #edefee;
@@ -9,12 +9,12 @@
 .card-container > img {
   border-radius: 16px 16px 0 0;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .card-content {
   display: flex;
-  padding: 0 15px 15px 15px;
+  padding: 0 0.9375rem 0.9375rem 0.9375rem;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
@@ -23,34 +23,34 @@
 .card-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
   align-items: center;
 }
 
 .card-title {
   font-family: 'Markazi Text';
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
 .card-price {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   color: #ee9972;
 }
 
 .card-description {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   color: #495e57;
-  margin-top: -50px;
+  margin-top: -3.125rem;
 }
 
 .card-footer {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .card-footer span {
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }

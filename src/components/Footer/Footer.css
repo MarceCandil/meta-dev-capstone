@@ -18,22 +18,22 @@ footer {
 
 .footer-links-container a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
-  line-height: 26px;
+  line-height: 1.625rem;
   color: #333333;
 }
 
 .footer-links-container p {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 800;
-  line-height: 23px;
+  line-height: 1.4375rem;
   color: #495e57;
 }
 
 @media screen and (max-width: 900px) {
   footer {
-    padding: 0 25px;
+    padding: 0 1.5625rem;
   }
 
   footer img {

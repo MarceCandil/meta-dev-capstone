@@ -6,41 +6,41 @@
 }
 
 .about-content div {
-  width: 423px;
-  margin-top: 30px;
+  width: 26.4375rem;
+  margin-top: 1.875rem;
 }
 
 .about-content h1 {
-  font-size: 64px;
+  font-size: 4rem;
   color: #f4ce14;
   font-weight: 400;
-  line-height: 50px;
+  line-height: 3.125rem;
 }
 
 .about-content h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 400;
   color: #000000;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 .about-content p {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #000000;
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .images-container {
   position: relative;
-  right: 80px;
+  right: 5rem;
 }
 
 .images-container > img {
   object-fit: cover;
 }
 
-.about-2 {
+.img_2 {
   position: absolute;
   top: -3.5rem;
   left: 5rem;

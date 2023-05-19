@@ -1,24 +1,24 @@
 .specials-header {
   display: flex;
-  margin-bottom: 56px;
+  margin-bottom: 3.5rem;
   justify-content: space-between;
   align-items: center;
 }
 
 .specials-header h2 {
   font-weight: 500;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .list-cards {
   display: flex;
-  height: 440px;
+  height: 27.5rem;
   justify-content: space-between;
 }
 
 @media screen and (max-width: 900px) {
   .specials-header {
-    padding: 0 25px;
+    padding: 0 1.5625rem;
   }
 
   .cards-container {
@@ -28,7 +28,7 @@
   }
 
   .list-cards {
-    width: 264px;
+    width: 16.5rem;
     overflow-x: scroll;
   }
 }

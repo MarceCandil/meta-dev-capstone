@@ -2,12 +2,13 @@ import React from 'react';
 import HambIcon from '../../assets/icons/hamb-menu.svg'
 import './Nav.css';
 import { useWindowSize } from '../../hooks/useWindowSize';
+import { Link } from 'react-router-dom';
 
 export const NavigationLinks = [
-  { name: 'Home', path: '/#' },
+  { name: 'Home', path: '/' },
   { name: 'About', path: '/#' },
   { name: 'Menu', path: '/#' },
-  { name: 'Reservations', path: '/#' },
+  { name: 'Reservations', path: 'booking' },
   { name: 'Order Online', path: '/#' },
   { name: 'Login', path: '/#' },
 ]
@@ -24,7 +25,7 @@ function Nav() {
             </>
           ): (
             <ul>
-              {NavigationLinks.map(nav => <li key={nav.name}><a href={nav.path}>{nav.name}</a></li>)}
+              {NavigationLinks.map(nav => <li key={nav.name}><Link to={nav.path}>{nav.name}</Link></li>)}
           </ul>
           )
         }
