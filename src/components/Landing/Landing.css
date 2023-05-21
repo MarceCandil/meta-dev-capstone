@@ -1,45 +1,51 @@
 .landing-content {
-  display: flex;
-  justify-content: space-between;
   padding-top: 1.4375rem;
+  background-color: #495e57;
+  height: 25.375rem;
+  margin-bottom: 3.5rem;
 }
 
-.landing-content div {
+.landing-content .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-content .wrapper div {
   width: 26.5rem;
   margin-top: 1.875rem;
 }
 
-.landing-content h1 {
+.landing-content .wrapper h1 {
   font-size: 4rem;
   color: #f4ce14;
   font-weight: 400;
 }
 
-.landing-content h2 {
+.landing-content .wrapper h2 {
   font-size: 2.5rem;
   font-weight: 500;
   color: #ffffff;
   margin: 0 0 1.625rem;
 }
 
-.landing-content p {
+.landing-content .wrapper p {
   font-size: 1.125rem;
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 3.125rem;
 }
 
-.landing-content img {
+.landing-content .wrapper img {
   border-radius: 16px;
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .landing-content {
     display: flex;
     justify-content: center;
   }
 
-  .landing-content div {
+  .landing-content .wrapper div {
     width: unset;
     padding: 0 0.625rem;
   }

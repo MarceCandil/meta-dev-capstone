@@ -1,33 +1,32 @@
-.specials-header {
+.specials__wrapper {
+  height: 40.625rem;
+}
+.specials__header {
   display: flex;
   margin-bottom: 3.5rem;
   justify-content: space-between;
   align-items: center;
 }
 
-.specials-header h2 {
+.specials__header h2 {
   font-weight: 500;
   font-size: 2.5rem;
 }
 
-.list-cards {
+.cards__list {
   display: flex;
   height: 27.5rem;
   justify-content: space-between;
 }
 
-@media screen and (max-width: 900px) {
-  .specials-header {
-    padding: 0 1.5625rem;
-  }
-
-  .cards-container {
+@media (max-width: 900px) {
+  .cards__container {
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
-  .list-cards {
+  .cards__list {
     width: 16.5rem;
     overflow-x: scroll;
   }

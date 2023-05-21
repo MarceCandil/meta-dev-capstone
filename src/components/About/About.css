@@ -2,10 +2,11 @@
   height: 100%;
   display: flex;
   align-items: center;
+  height: 36.125rem;
   justify-content: space-between;
 }
 
-.about-content div {
+.about-content article {
   width: 26.4375rem;
   margin-top: 1.875rem;
 }

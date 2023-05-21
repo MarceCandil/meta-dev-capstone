@@ -1,11 +1,10 @@
 import React from "react";
-import GreekSaladaImg from '../../../assets/greek-salad.jpg';
-import BruchettaImg from '../../../assets/bruchetta.jpg';
-import LemonDessertImg from '../../../assets/lemon-dessert.jpg'
+import GreekSaladaImg from 'assets/greek-salad.jpg';
+import BruchettaImg from 'assets/bruchetta.jpg';
+import LemonDessertImg from 'assets/lemon-dessert.jpg'
 
+import TestimonialBox from 'components/TestimonialBox/TestimonialBox';
 import './Testimonials.css'
-import TestimonialBox from '../../TestimonialBox/TestimonialBox';
-import Wrapper from '../../Wrapper/Wrapper';
 
 const TESTIMONIALS = [
   {
@@ -35,22 +34,24 @@ type TestimonialProps = {
 }
 
 function Testimonials({ isVisible }: TestimonialProps) {
+  if(!isVisible) return <></>;
+
   return (
-    <Wrapper height={590} bgColor='#d9d9d9' isVisible={isVisible}>
-      <section className='testimonials-wrapper'>
-        <h1>Testimonials</h1>
-        <div className='testimonials-box-container'>
-          {TESTIMONIALS.map((testimonial) => (
-            <TestimonialBox
-              key={testimonial.name}
-              img={testimonial.img}
-              name={testimonial.name}
-              review={testimonial.review}
-            />
-          ))}
-        </div>
+      <section className='testimonials__wrapper'>
+        <section className='wrapper'>
+          <h1>Testimonials</h1>
+          <div className='testimonials-box-container'>
+            {TESTIMONIALS.map((testimonial) => (
+              <TestimonialBox
+                key={testimonial.name}
+                img={testimonial.img}
+                name={testimonial.name}
+                review={testimonial.review}
+              />
+            ))}
+          </div>
+        </section>
       </section>
-    </Wrapper>
   )
 }
 

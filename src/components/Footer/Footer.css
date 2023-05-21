@@ -1,19 +1,19 @@
 footer {
   display: flex;
+  height: 26.0625rem;
+  background-color: #d9d9d9;
+}
+
+.footer__wrapper {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
 }
 
 .footer-links-container {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-}
-
-.footer-links-container ul {
-  list-style: none;
-  padding: unset;
 }
 
 .footer-links-container a {
@@ -31,11 +31,7 @@ footer {
   color: #495e57;
 }
 
-@media screen and (max-width: 900px) {
-  footer {
-    padding: 0 1.5625rem;
-  }
-
+@media (max-width: 900px) {
   footer img {
     display: none;
   }

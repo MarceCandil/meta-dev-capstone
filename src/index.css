@@ -1,5 +1,8 @@
 * {
   font-family: 'Karla', serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -13,4 +16,75 @@ h3,
 body,
 p {
   margin: unset;
+}
+
+label {
+  margin-top: 5px;
+}
+
+input,
+input[type='date'] {
+  height: 20px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+}
+
+select {
+  height: 34px;
+  padding: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: unset;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.wrapper {
+  width: 94%;
+  margin: 0px auto;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .wrapper {
+    width: 70%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 826px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .wrapper {
+    width: 826px;
+  }
 }

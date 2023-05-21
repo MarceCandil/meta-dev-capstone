@@ -1,22 +1,70 @@
 nav > ul {
   display: flex;
-  list-style: none;
 }
 
-nav > ul > li {
+.menu-nav li a,
+.menu-nav li span {
+  font-size: 1.25rem;
+}
+
+.menu-nav li:not(:last-child) {
   margin-right: 1.75rem;
 }
 
-nav > ul > li > a {
-  text-decoration: none;
-  font-size: 1.25rem;
-  color: #000000;
-}
+@media (max-width: 900px) {
+  button {
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+  }
+  .navbar .toggle {
+    position: fixed;
+    top: 50px;
+    right: 15px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
 
-@media screen and (max-width: 900px) {
-  nav {
-    width: 100%;
+  .menu-nav {
+    list-style: none;
+    position: absolute;
+    background: #fff;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    max-width: 290px;
+    z-index: 9;
+    font-size: 18px;
+    box-shadow: 0 10px 15px -3px rgb(46 41 51 / 8%),
+      0 4px 6px -2px rgb(71 63 79 / 16%);
+    transform: translateX(100px);
+    transition: transform ease-in-out 0.2s;
+  }
+  .menu-nav.show-menu {
+    transform: translateX(0px);
+    width: 200px;
+    position: absolute;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    top: 8%;
+    left: 74%;
+    border-radius: 16px;
+  }
+  .menu-nav li a,
+  .menu-nav li span {
+    display: block;
+    padding: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .menu-nav li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .menu-nav li:hover {
+    background-color: yellow;
   }
 }

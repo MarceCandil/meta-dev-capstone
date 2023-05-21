@@ -2,13 +2,14 @@ import React from 'react';
 import './Button.css';
 
 type ButtonProps = {
+  onClick: () => void;
   name: string;
   variant: 'default' | 'clicked' | 'disabled';
   width?: number;
   height?: number;
   mt?: number;
 }
-function MyButton({ name, variant, width, height, mt}: ButtonProps) {
+function MyButton({ onClick, name, variant, width, height, mt}: ButtonProps) {
   const color = {
     default: '#F4CE14',
     clicked: '#495E57',
@@ -16,7 +17,10 @@ function MyButton({ name, variant, width, height, mt}: ButtonProps) {
   }
   return (
     <button
+      onClick={onClick}
+      aria-label="On Click"
       className='button-wrapper'
+      disabled={variant === 'disabled'}
       style={{
         width: `${width ?? 200}px`,
         height: `${height ?? 60}px`,

@@ -1,35 +1,43 @@
-import React from 'react';
-import HambIcon from '../../assets/icons/hamb-menu.svg'
+import React, { useEffect, useRef, useState } from 'react';
+import HambIcon from 'assets/icons/hamb-menu.svg'
 import './Nav.css';
-import { useWindowSize } from '../../hooks/useWindowSize';
+import { useWindowSize } from 'hooks/useWindowSize';
 import { Link } from 'react-router-dom';
-
-export const NavigationLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/#' },
-  { name: 'Menu', path: '/#' },
-  { name: 'Reservations', path: 'booking' },
-  { name: 'Order Online', path: '/#' },
-  { name: 'Login', path: '/#' },
-]
+import { NAVIGATION_LINKS } from 'helpers/statics';
 
 function Nav() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
   const size = useWindowSize();
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handler = (event: any) => {
+      if (
+        navbarOpen &&
+        ref.current &&
+        !ref.current.contains(event.target)
+      ) {
+        setNavbarOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('mousedown', handler);
+    };
+  }, [navbarOpen]);
 
   return (
-      <nav>
-        {
-          size.width! < 900 ? (
-            <>
-              <img src={HambIcon} alt='Hamburg Ico'/>
-            </>
-          ): (
-            <ul>
-              {NavigationLinks.map(nav => <li key={nav.name}><Link to={nav.path}>{nav.name}</Link></li>)}
-          </ul>
-          )
-        }
-      </nav>
+    <nav ref={ref} className='navbar'>
+      {size.width! < 900 && (
+          <button aria-label="On Click" className='toggle' onClick={() => setNavbarOpen((prev) => !prev)}>
+            <img src={HambIcon} alt='Hamburg Ico'/>
+          </button>
+        )}
+      <ul className={`menu-nav${navbarOpen ? ' show-menu' : ''}`}>
+        {NAVIGATION_LINKS.map(nav => <li key={nav.name}><Link to={nav.path}>{nav.name}</Link></li>)}
+      </ul>
+    </nav>
   );
 }
 

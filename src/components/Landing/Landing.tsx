@@ -1,7 +1,8 @@
 import React from 'react';
-import Wrapper from '../../Wrapper/Wrapper';
-import MyButton from '../../Button/Button';
-import RestaurantFoodImage from '../../../assets/restauranfood.jpg';
+import { useNavigate } from 'react-router-dom';
+
+import MyButton from 'components/Button/Button';
+import RestaurantFoodImage from 'assets/restauranfood.jpg';
 import './Landing.css';
 
 const DESCRIPTION = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
@@ -11,14 +12,16 @@ type LandingProps = {
 };
 
 function Landing({ isVisible }: LandingProps) {
+  const navigate = useNavigate()
+
   return (
-    <Wrapper bgColor='#495E57' height={406} mb={isVisible ? 80 : 10}>
-        <div className='landing-content'>
+      <section className='landing-content'>
+        <section className='wrapper'>
           <div>
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
             <p>{DESCRIPTION}</p>
-            <MyButton name='Reserve a Table' variant='default'/>
+            <MyButton name='Reserve a Table' variant='default' onClick={() => navigate("booking")}/>
           </div>
           {
             isVisible && (
@@ -31,8 +34,8 @@ function Landing({ isVisible }: LandingProps) {
               />
             )
           }
-      </div>
-    </Wrapper>
+        </section>
+      </section>
   );
 }
 
