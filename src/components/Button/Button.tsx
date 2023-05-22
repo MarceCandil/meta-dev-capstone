@@ -8,8 +8,9 @@ type ButtonProps = {
   width?: number;
   height?: number;
   mt?: number;
+  dataTestid?: string;
 }
-function MyButton({ onClick, name, variant, width, height, mt}: ButtonProps) {
+function MyButton({ onClick, name, variant, width, height, mt, dataTestid}: ButtonProps) {
   const color = {
     default: '#F4CE14',
     clicked: '#495E57',
@@ -20,6 +21,7 @@ function MyButton({ onClick, name, variant, width, height, mt}: ButtonProps) {
       onClick={onClick}
       aria-label="On Click"
       className='button-wrapper'
+      data-testid={dataTestid}
       disabled={variant === 'disabled'}
       style={{
         width: `${width ?? 200}px`,

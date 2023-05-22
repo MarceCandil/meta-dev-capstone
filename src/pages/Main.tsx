@@ -18,7 +18,7 @@ function Main() {
   const isVisible = !(size.width! < 900);
 
   return (
-    <main>
+    <main data-testid="main">
       <Routes>
         <Route
           index

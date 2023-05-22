@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import bookingReducer from 'reducer/BookingReducer';
-import { BookinData } from 'components/BookingForm/BookingForm.types';
+import { BookingData } from 'components/BookingForm/BookingForm.types';
 import { fetchAPI, submitAPI } from 'helpers/bookingApis';
 import BookingForm from 'components/BookingForm/BookingForm';
 import './BookingPage.css';
@@ -23,7 +23,7 @@ function BookingPage() {
     dispatch({ type: "update-times", payload: date });
   };
 
-  const submitForm = (formData: BookinData) => {
+  const submitForm = (formData: BookingData) => {
     const result = submitAPI(formData);
     if (result) {
       let existingBookings = JSON.parse(

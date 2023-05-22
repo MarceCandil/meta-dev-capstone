@@ -25,7 +25,7 @@ export const SPECIALS = [
 
 export const NAVIGATION_LINKS = [
   { name: 'Home', path: '/' },
-  { name: 'About', path: '/#' },
+  { name: 'About', path: '/#about' },
   { name: 'Menu', path: '/menu' },
   { name: 'Reservations', path: '/booking' },
   { name: 'Order Online', path: '/order-online' },

@@ -1,7 +1,7 @@
-export interface BookinData {
+export interface BookingData {
   firstName: string;
-  email: string;
-  phone: string;
+  email?: string;
+  phone: number;
   date: string;
   time: string;
   guests: number;

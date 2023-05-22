@@ -5,7 +5,7 @@ import './Footer.css';
 
 function Footer() {
   return (
-      <footer>
+      <footer data-testid="footer">
         <section className='footer__wrapper wrapper'>
           <img width={162} height={279} src={FooterLogo} alt='Footer Company Logo' />
           <div className='footer-links-container'>
@@ -18,9 +18,9 @@ function Footer() {
             <section>
               <p>Contact</p>
               <ul>
-                <li><a href="/#">Address</a></li>
-                <li><a href="/#">Phone Number</a></li>
-                <li><a href="/#">Email</a></li>
+                <li><span>EverGreen 123</span></li>
+                <li><span>+123 123444</span></li>
+                <li><span>info@littleLemon.com</span></li>
               </ul>
             </section>
             <section>

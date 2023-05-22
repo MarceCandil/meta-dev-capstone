@@ -16,7 +16,8 @@ footer {
   justify-content: space-evenly;
 }
 
-.footer-links-container a {
+.footer-links-container a,
+.footer-links-container span {
   text-decoration: none;
   font-size: 1.25rem;
   font-weight: 500;

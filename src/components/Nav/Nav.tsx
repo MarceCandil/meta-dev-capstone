@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
 import { NAVIGATION_LINKS } from 'helpers/statics';
+import { HashLink } from 'react-router-hash-link';
 
 type NavProps = {
   isNavbarOpen: boolean;
@@ -31,7 +32,12 @@ function Nav({ isNavbarOpen, setNavbarOpen }: NavProps) {
   return (
     <nav ref={ref} className='navbar'>
       <ul className={`menu-nav${isNavbarOpen ? ' show-menu' : ''}`}>
-        {NAVIGATION_LINKS.map(nav => <li key={nav.name}><Link to={nav.path}>{nav.name}</Link></li>)}
+        {NAVIGATION_LINKS.map(nav => {
+          if(nav.name === 'About') {
+            return <li key={nav.name}><HashLink to={nav.path}>{nav.name}</HashLink></li>
+          }
+          return <li key={nav.name}><Link to={nav.path}>{nav.name}</Link></li>
+        })}
       </ul>
     </nav>
   );

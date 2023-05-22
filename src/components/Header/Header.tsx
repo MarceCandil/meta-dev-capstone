@@ -10,7 +10,7 @@ function Header() {
   const size = useWindowSize();
 
   return (
-    <header className='wrapper'>
+    <header className='wrapper' data-testid="header">
       {size.width! < 900 && (
         <button aria-label="On Click" className='btn__toggle' onClick={() => setNavbarOpen((prev) => !prev)}>
           <img src={HambIcon} alt='Hamburg Ico'/>

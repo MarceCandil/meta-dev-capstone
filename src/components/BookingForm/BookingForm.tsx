@@ -3,14 +3,14 @@ import dayjs from 'dayjs';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import FormError from '../FormError/FormError';
-import { BookinData } from './BookingForm.types';
+import { BookingData } from './BookingForm.types';
 import './BookingForm.css';
 import MyButton from 'components/Button/Button';
 
 type BookingFormProps = {
   availableTimes: string[];
   updateTimes: (selectedDate: string) => void;
-  submitForm: (formData: BookinData) => void;
+  submitForm: (formData: BookingData) => void;
 }
 
 function BookingForm({ availableTimes, updateTimes, submitForm }: BookingFormProps) {
@@ -19,19 +19,19 @@ function BookingForm({ availableTimes, updateTimes, submitForm }: BookingFormPro
   const formik = useFormik({
     initialValues: {
       firstName: '',
-      email: '',
-      phone: '',
+      phone: 0,
       date: '',
-      time: '17:00',
+      time: '',
       guests: 0,
       occasion: 'none',
     },
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       submitForm(values)
+      resetForm()
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required('Required'),
-      email: Yup.string().email('Invalid email address'),
+      email: Yup.string().email('Invalid email address').notRequired(),
       phone: Yup.number().required('Required'),
       date: Yup.date().min(minDate, 'Min date cannot be a date earlier than the current one.').required('Required'),
       time: Yup.string().required('Required'),
@@ -42,23 +42,24 @@ function BookingForm({ availableTimes, updateTimes, submitForm }: BookingFormPro
   });
 
   return (
-    <form className='booking__form' onSubmit={formik.handleSubmit}>
+    <form className='booking__form' onSubmit={formik.handleSubmit} data-testid='booking-form'>
       <label htmlFor="firstName">Name <span style={{color: 'red'}}>*</span></label>
-      <input id="firstName" {...formik.getFieldProps('firstName')} />
+      <input data-testid="firstName" id="firstName" {...formik.getFieldProps('firstName')} />
       <FormError formik={formik} id='firstName'/>
 
       <label htmlFor="email">Email</label>
-      <input id="email" {...formik.getFieldProps('email')} />
+      <input data-testid="email" id="email" {...formik.getFieldProps('email')} />
       <FormError formik={formik} id='email'/>
 
       <label htmlFor="phone">Phone Number <span style={{color: 'red'}}>*</span></label>
-      <input id="phone" {...formik.getFieldProps('phone')} />
+      <input data-testid="phone" id="phone" type='number' {...formik.getFieldProps('phone')} />
       <FormError formik={formik} id='phone'/>
 
       <label htmlFor="date">Choose date <span style={{color: 'red'}}>*</span></label>
       <input
         id="date"
         type="date"
+        data-testid="date"
         {...formik.getFieldProps('date')}
         onBlur={(e) => {
           formik.getFieldProps('date').onBlur(e);
@@ -68,7 +69,8 @@ function BookingForm({ availableTimes, updateTimes, submitForm }: BookingFormPro
       <FormError formik={formik} id='date'/>
 
       <label htmlFor="time">Choose time <span style={{color: 'red'}}>*</span></label>
-      <select id="time" {...formik.getFieldProps('time')}>
+      <select data-testid="time" id="time" {...formik.getFieldProps('time')}>
+        <option value="" disabled hidden>Choose time</option>
         {availableTimes.map((time) => (
           <option key={time} value={time}>
             {time}
@@ -78,11 +80,12 @@ function BookingForm({ availableTimes, updateTimes, submitForm }: BookingFormPro
       <FormError formik={formik} id='time'/>
 
       <label htmlFor="guests">Number of guests <span style={{color: 'red'}}>*</span></label>
-      <input id="guests" type="number" placeholder="1" min="1" max="10" {...formik.getFieldProps('guests')}/>
+      <input  data-testid="guests" id="guests" type="number" placeholder="1" min="1" max="10" {...formik.getFieldProps('guests')}/>
       <FormError formik={formik} id='guests'/>
 
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" {...formik.getFieldProps('occasion')}>
+      <select data-testid="occasion" id="occasion" {...formik.getFieldProps('occasion')}>
+          <option value="" disabled hidden>Choose occasion</option>
           <option value='none'>None</option>
           <option value='birthday'>Birthday</option>
           <option value='anniversary'>Anniversary</option>
@@ -90,7 +93,7 @@ function BookingForm({ availableTimes, updateTimes, submitForm }: BookingFormPro
       </select>
       <FormError formik={formik} id='occasion'/>
 
-      <MyButton mt={15} width={320} onClick={() => formik.handleSubmit} name='Make Your reservation' variant={formik.isValid ? 'default' : 'disabled'}/>
+      <MyButton dataTestid='submit-btn' mt={15} width={320} onClick={() => formik.handleSubmit} name='Make Your reservation' variant={formik.dirty && formik.isValid ? 'default' : 'disabled'}/>
     </form>
   );
 }

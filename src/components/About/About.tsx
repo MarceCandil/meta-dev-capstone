@@ -10,19 +10,19 @@ type AboutProps = {
 }
 
 function About({ isVisible }: AboutProps) {
-  if(!isVisible) return <></>;
-
   return (
-      <section className='about-content wrapper'>
+      <section className='about-content wrapper' id='about'>
           <article>
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
             <p>{DESCRIPTION}</p>
           </article>
-          <section className="images-container">
+          {isVisible && (
+            <section className="images-container">
               <img height={338} width={276} src={RestaurantA} alt="Little Lemon restaurant cuisine 1" />
               <img height={338} width={276} className="img_2" src={RestaurantB} alt="Little Lemon restaurant cuisine 2" />
-          </section>
+            </section>
+            )}
         </section>
   )
 }
