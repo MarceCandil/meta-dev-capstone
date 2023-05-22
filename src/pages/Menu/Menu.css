@@ -1,0 +1,29 @@
+.menu__container {
+  display: flex;
+  margin-right: 16px;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.menu__container h1 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+.menu {
+  display: flex;
+  height: 27.5rem;
+  justify-content: space-between;
+  margin-bottom: 1.875rem;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    overflow-x: scroll;
+  }
+  .card__container:not(:last-of-type) {
+    margin-right: 16px;
+  }
+}

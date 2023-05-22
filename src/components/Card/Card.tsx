@@ -11,7 +11,7 @@ type CardProps = {
 
 function Card({ img, title, price, description }: CardProps) {
   return (
-      <section className='card-container'>
+      <section className='card__container'>
       <img
         loading="lazy"
         width='264'
@@ -19,13 +19,13 @@ function Card({ img, title, price, description }: CardProps) {
         src={img}
         alt="logo"
       />
-      <div className='card-content'>
-        <div className='card-header'>
-          <span className='card-title'>{title}</span>
-          <span className='card-price'>{`$ ${price}`}</span>
+      <div className='card__content'>
+        <div className='card__header'>
+          <span className='card__title'>{title}</span>
+          <span className='card__price'>{`$ ${price}`}</span>
         </div>
-        <span className='card-description'>{description}</span>
-        <div className='card-footer'>
+        <span className='card__description'>{description}</span>
+        <div className='card__footer'>
           <span>Order a Delivery</span>
           <img
             loading="lazy"

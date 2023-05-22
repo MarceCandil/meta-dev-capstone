@@ -9,6 +9,8 @@ import { useWindowSize } from 'hooks/useWindowSize';
 import BookingPage from './BookingPage/BookingPage';
 import ConfirmationPage from './Confirmation/Confirmation';
 import MenuPage from './Menu/Menu';
+import LoginPage from './Loginpage/LoginPage';
+import OrderOnlinePage from './OrderOnlinePage/OrderOnlinePage';
 
 
 function Main() {
@@ -31,6 +33,8 @@ function Main() {
           }
         />
         <Route path="/menu" element={<MenuPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/order-online" element={<OrderOnlinePage />} />
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
       </Routes>

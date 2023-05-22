@@ -28,6 +28,6 @@ export const NAVIGATION_LINKS = [
   { name: 'About', path: '/#' },
   { name: 'Menu', path: '/menu' },
   { name: 'Reservations', path: '/booking' },
-  { name: 'Order Online', path: '/#' },
-  { name: 'Login', path: '/#' },
+  { name: 'Order Online', path: '/order-online' },
+  { name: 'Login', path: '/login' },
 ]

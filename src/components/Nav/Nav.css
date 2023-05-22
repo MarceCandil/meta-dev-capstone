@@ -1,3 +1,9 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 nav > ul {
   display: flex;
 }
@@ -12,17 +18,23 @@ nav > ul {
 }
 
 @media (max-width: 900px) {
-  button {
-    display: block;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    font-size: 20px;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .navbar .toggle {
+
+  .img__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar {
     position: fixed;
-    top: 50px;
-    right: 15px;
+    left: 16px;
+    top: 63px;
+
     cursor: pointer;
     background: transparent;
     border: none;
@@ -37,20 +49,16 @@ nav > ul {
     overflow: hidden;
     max-width: 290px;
     z-index: 9;
-    font-size: 18px;
     box-shadow: 0 10px 15px -3px rgb(46 41 51 / 8%),
       0 4px 6px -2px rgb(71 63 79 / 16%);
-    transform: translateX(100px);
+    transform: translateY(-50px);
     transition: transform ease-in-out 0.2s;
   }
   .menu-nav.show-menu {
-    transform: translateX(0px);
+    transform: translateY(10px);
     width: 200px;
-    position: absolute;
     display: flex;
     flex-direction: column;
-    top: 8%;
-    left: 74%;
     border-radius: 16px;
   }
   .menu-nav li a,

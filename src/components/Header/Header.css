@@ -4,3 +4,11 @@ header {
   justify-content: space-between;
   height: 7.6875rem;
 }
+
+.wrapper > .btn__toggle {
+  display: block;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+}

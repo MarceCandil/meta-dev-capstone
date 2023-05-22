@@ -12,22 +12,3 @@
   font-weight: 500;
   font-size: 2.5rem;
 }
-
-.cards__list {
-  display: flex;
-  height: 27.5rem;
-  justify-content: space-between;
-}
-
-@media (max-width: 900px) {
-  .cards__container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .cards__list {
-    width: 16.5rem;
-    overflow-x: scroll;
-  }
-}

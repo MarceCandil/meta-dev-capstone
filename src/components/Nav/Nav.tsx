@@ -1,19 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
-import HambIcon from 'assets/icons/hamb-menu.svg'
+import React, { useEffect, useRef } from 'react';
 import './Nav.css';
-import { useWindowSize } from 'hooks/useWindowSize';
 import { Link } from 'react-router-dom';
 import { NAVIGATION_LINKS } from 'helpers/statics';
 
-function Nav() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  const size = useWindowSize();
+type NavProps = {
+  isNavbarOpen: boolean;
+  setNavbarOpen: (isNavbarOpen: boolean) => void;
+}
+
+function Nav({ isNavbarOpen, setNavbarOpen }: NavProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handler = (event: any) => {
       if (
-        navbarOpen &&
+        isNavbarOpen &&
         ref.current &&
         !ref.current.contains(event.target)
       ) {
@@ -25,16 +26,11 @@ function Nav() {
       // Cleanup the event listener
       document.removeEventListener('mousedown', handler);
     };
-  }, [navbarOpen]);
+  }, [isNavbarOpen, setNavbarOpen]);
 
   return (
     <nav ref={ref} className='navbar'>
-      {size.width! < 900 && (
-          <button aria-label="On Click" className='toggle' onClick={() => setNavbarOpen((prev) => !prev)}>
-            <img src={HambIcon} alt='Hamburg Ico'/>
-          </button>
-        )}
-      <ul className={`menu-nav${navbarOpen ? ' show-menu' : ''}`}>
+      <ul className={`menu-nav${isNavbarOpen ? ' show-menu' : ''}`}>
         {NAVIGATION_LINKS.map(nav => <li key={nav.name}><Link to={nav.path}>{nav.name}</Link></li>)}
       </ul>
     </nav>
